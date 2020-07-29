@@ -2,7 +2,7 @@
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
   :dependencies [[bidi "2.1.6"]
-                 [com.cemerick/piggieback "0.2.2"]
+                 [cider/piggieback "0.5.0"]
                  [com.taoensso/timbre "4.10.0"]
                  [macchiato/hiccups "0.4.1"]
                  [macchiato/core "0.2.18"]
@@ -16,7 +16,7 @@
   :jvm-opts ^:replace ["-Xmx1g" "-server"]
   :plugins [[lein-doo "0.1.7"]
             [macchiato/lein-npm "0.6.4"]
-            [lein-figwheel "0.5.19"]
+            [lein-figwheel "0.5.20"]
             [lein-cljsbuild "1.1.7"]]
   :npm {:dependencies [[source-map-support "0.4.6"]]
         :write-package-json true}
@@ -28,7 +28,7 @@
    [:server
     {:npm {:package {:main "target/out/my-project.js"
                      :scripts {:start "node target/out/my-project.js"}}}
-     :dependencies [[figwheel-sidecar "0.5.19"]]
+     :dependencies [[figwheel-sidecar "0.5.20"]]
      :cljsbuild
      {:builds {:dev
                {:source-paths ["env/dev" "src/server"]
@@ -45,7 +45,7 @@
      {:http-server-root "public"
       :nrepl-port 7000
       :reload-clj-files {:clj true :cljc true}
-      :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+      :nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
      :source-paths ["env/dev"]
      :repl-options {:init-ns user}}]
    :test
